@@ -18,7 +18,7 @@ static int protothread1(struct pt *pt)
   PT_BEGIN(pt);
   while (1)
   {
-    PT_DELAY_MS(pt,1000);//PT_TIMER_DELAY(pt,1000);
+    PT_WAIT_MS(pt,1000);//也可以是 PT_TIMER_DELAY(pt,1000);
     digitalWrite(12, state1);
     state1 = !state1;
   }
@@ -30,7 +30,7 @@ static int protothread2(struct pt *pt)
 {
   PT_BEGIN(pt);
   while (1) {
-    PT_DELAY_MS(pt,5000);//PT_TIMER_DELAY(pt,5000);
+    PT_WAIT_MS(pt,5000);//PT_TIMER_DELAY(pt,5000);
     digitalWrite(13, state2);
     state2 = !state2;
   }
